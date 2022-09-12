@@ -11,8 +11,9 @@ let xAttempts = 1
 //Eventos
 buttonTry.addEventListener('click', handleTryClick)
 buttonReset.addEventListener('click', handleResetClick)
+document.addEventListener('keydown', keydownEnter)
 
-//funções callback
+//Funções
 const handleTryClick = (event) => { 
     event.preventDefault()
 
@@ -35,4 +36,9 @@ const toggleScreen = () => {
     screen2.classList.toggle(".hide")
 }
 
+const keydownEnter = (e) => {
+    if(e.key == 'Enter') {
+        handleResetClick()
+    }
+}
 
